@@ -1,8 +1,8 @@
 # Practice 2: Event-Driven Messaging with RabbitMQ
 
 **Course:** Enterprise Application Integration (EAI)
-**Submission deadline:** 08.03.2026, 20:00 EEST (Riga/Latvia)
-**Submission format:** Public GitHub repository URL to martins.leitass@turiba.lv
+**Submission deadline:** 08.03.2026, 20:00 EET (Europe/Riga, UTC+2)
+**Submission format:** Public GitHub repository URL sent by email to martins.leitass@turiba.lv
 **Total points:** 25 (23 automated + 2 manual review); Passing score 60%;
 
 ---
@@ -61,6 +61,8 @@ Or run detached:
 docker-compose up -d --build
 ```
 
+If your Docker installation uses the plugin syntax, replace docker-compose with docker compose in all commands in this README.
+
 Wait for all services to initialize. RabbitMQ takes ~15 seconds for its health check to pass before other services start.
 
 ### 2. Verify services are running
@@ -98,6 +100,8 @@ docker-compose down -v
 ## What's Provided
 
 You receive a fully configured infrastructure. **Do not modify** any of the following files unless explicitly instructed:
+
+Unless explicitly instructed otherwise, edit only the four service server.js files and your own submission README content; treat all scaffold/infrastructure files as read-only.
 
 | Component | Files | Purpose |
 |---|---|---|
@@ -615,13 +619,13 @@ This creates `grade-report.md` in the project root with your score breakdown.
 
 ### Deadline
 
-**08.03.2026, 20:00 EST**
+**08.03.2026, 20:00 EET (Europe/Riga, UTC+2)**
 
 ### Format
 
 1. Create a **public GitHub repository** containing your completed project
 2. Push all your code — the entire project directory including your implemented `server.js` files
-3. Submit the repository URL through the course submission system (in this case it link sent to martins.leitass@gmail.com)
+3. Submit the repository URL by email to martins.leitass@turiba.lv.
 
 ### Your repository must include
 
@@ -689,7 +693,7 @@ Stop the conflicting process or modify `docker-compose.yml` to use different hos
 
 ### Services fail to connect to RabbitMQ
 
-The `connectWithRetry` helper retries automatically for up to 30 seconds. If services still fail:
+The helper uses exponential backoff retries (default up to 10 attempts); delay starts at 3000 ms and doubles each attempt, capped at 30000 ms per attempt.
 
 ```bash
 # Check RabbitMQ logs
