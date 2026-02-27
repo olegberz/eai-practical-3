@@ -4,6 +4,22 @@
       "name": "/"
     }
   ],
+  "users": [
+    {
+      "name": "guest",
+      "password": "guest",
+      "tags": ["administrator"]
+    }
+  ],
+  "permissions": [
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
   "queues": [
     {
       "name": "payments.queue",
