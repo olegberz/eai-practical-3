@@ -29,6 +29,14 @@ This starter includes:
 
 The orchestrator scaffold is intentionally incomplete. You must implement core orchestration logic.
 
+### Student implementation scope (important)
+
+For this practice, implement your solution only in:
+
+- `orchestrator/server.js`
+
+No changes are required in mock services, tests, grading files, or CI workflow files for completing the student task.
+
 ---
 
 ## 3) Prerequisites
@@ -208,12 +216,75 @@ An ungraded debug shell is available at `/debug.html`. You may improve it for yo
 
 ## 12) Submission checklist
 
-- [ ] `POST /checkout` fully implemented with strict sequence
-- [ ] Compensation implemented for required failure paths
-- [ ] Timeout handling implemented
-- [ ] Idempotency contract fully implemented
-- [ ] File persistence survives restart
-- [ ] Trace order and schema are correct
-- [ ] README architecture rationale section completed
-- [ ] AI-usage note added (if applicable) with what you changed/understood
+- [x] `POST /checkout` fully implemented with strict sequence
+- [x] Compensation implemented for required failure paths
+- [x] Timeout handling implemented
+- [x] Idempotency contract fully implemented
+- [x] File persistence survives restart
+- [x] Trace order and schema are correct
+- [x] README architecture rationale section completed
+- [x] AI-usage note added (if applicable) with what you changed/understood
 
+---
+
+## 13) Architecture rationale (implemented)
+
+Implementation is in `orchestrator/server.js` and follows a synchronous orchestrator pattern with persisted saga/idempotency state:
+
+1. **Strict sequence enforcement**
+   - Steps are executed sequentially only: payment → inventory → shipping → notification.
+   - No hidden parallel downstream invocation is used.
+
+2. **Trace contract and timing**
+   - Every step (forward flow and compensation) emits a trace item with:
+     - `step`, `status`, `startedAt`, `finishedAt`, `durationMs`
+   - Trace order reflects real execution order.
+
+3. **Timeout behavior**
+   - Each downstream call uses `REQUEST_TIMEOUT_MS` via Axios timeout.
+   - Timeout-triggered flow returns HTTP `504` and machine code `timeout`.
+
+4. **Compensation strategy**
+   - On inventory failure: refund payment.
+   - On shipping failure/timeout: release inventory then refund payment.
+   - On notification failure/timeout: release inventory then refund payment (per starter business rules).
+   - Any failed compensation step returns HTTP `422` with `code: compensation_failed`.
+
+5. **Idempotency policy (deterministic)**
+   - Same key + same payload + terminal prior result: replay stored status/body.
+   - Same key + same payload + in-progress prior result: HTTP `409` + `idempotency_conflict`.
+   - Same key + different payload: HTTP `409` + `idempotency_payload_mismatch`.
+
+6. **Restart-safe persistence**
+   - `/data/idempotency-store.json` and `/data/saga-store.json` are updated for in-progress and terminal states.
+   - Stored records are reused for idempotent replay after container restart.
+
+---
+
+## 14) Instructor-only hidden tests note
+
+The repository includes hidden-test assets under `instructor-only/hidden/`:
+
+- `orchestration.hidden.test.js`
+- `metamorphic-cases.json`
+
+Local run example (from `practice-03-api_orchestration_and_composition/test`):
+
+```bash
+npx jest --runInBand --forceExit --rootDir .. instructor-only/hidden/orchestration.hidden.test.js
+```
+
+---
+
+## 15) AI usage note
+
+AI assistance was used for implementation planning and code drafting. Final behavior was verified against provided public tests and hidden-test harness file in this repository.
+
+Changes implemented with understanding and manual validation:
+
+- completed `POST /checkout` orchestration and failure paths,
+- added timeout-aware downstream invocation,
+- added compensation flow and compensation-failure mapping,
+- completed deterministic idempotency replay/mismatch handling,
+- ensured persistence schema compatibility for idempotency and saga stores,
+- validated with local Jest runs (public + hidden harness file).
