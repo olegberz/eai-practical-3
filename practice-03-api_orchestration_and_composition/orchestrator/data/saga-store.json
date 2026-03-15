@@ -7,34 +7,158 @@
       "updatedAt": "2026-03-08T16:56:35.044Z"
     },
     "ord-pay-fail-001": {
-      "idempotencyKey": "idem-pay-fail-001-1772988995222",
+      "idempotencyKey": "idem-pay-fail-001-1773582161395",
       "state": "failed",
-      "steps": [],
-      "updatedAt": "2026-03-08T16:56:35.238Z"
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-15T13:42:41.421Z",
+          "finishedAt": "2026-03-15T13:42:41.439Z",
+          "durationMs": 18
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:41.439Z"
     },
     "ord-inv-fail-001": {
-      "idempotencyKey": "idem-comp-fail-1772988995834",
+      "idempotencyKey": "idem-comp-fail-1773582164644",
       "state": "failed",
-      "steps": [],
-      "updatedAt": "2026-03-08T16:56:35.845Z"
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:44.666Z",
+          "finishedAt": "2026-03-15T13:42:44.670Z",
+          "durationMs": 4
+        },
+        {
+          "step": "inventory",
+          "status": "failed",
+          "startedAt": "2026-03-15T13:42:44.670Z",
+          "finishedAt": "2026-03-15T13:42:44.673Z",
+          "durationMs": 3
+        },
+        {
+          "step": "payment_refund",
+          "status": "failed",
+          "startedAt": "2026-03-15T13:42:44.673Z",
+          "finishedAt": "2026-03-15T13:42:44.677Z",
+          "durationMs": 4
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:44.677Z"
     },
     "ord-ship-timeout-001": {
-      "idempotencyKey": "idem-ship-timeout-001-1772988995626",
-      "state": "failed",
-      "steps": [],
-      "updatedAt": "2026-03-08T16:56:35.640Z"
+      "idempotencyKey": "idem-ship-timeout-001-1773582161904",
+      "state": "compensated",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:41.928Z",
+          "finishedAt": "2026-03-15T13:42:41.933Z",
+          "durationMs": 5
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:41.933Z",
+          "finishedAt": "2026-03-15T13:42:41.935Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "timeout",
+          "startedAt": "2026-03-15T13:42:41.935Z",
+          "finishedAt": "2026-03-15T13:42:44.438Z",
+          "durationMs": 2503
+        },
+        {
+          "step": "inventory_release",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:44.438Z",
+          "finishedAt": "2026-03-15T13:42:44.442Z",
+          "durationMs": 4
+        },
+        {
+          "step": "payment_refund",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:44.442Z",
+          "finishedAt": "2026-03-15T13:42:44.445Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:44.445Z"
     },
     "ord-replay-001": {
-      "idempotencyKey": "idem-replay-001-1772988996027",
-      "state": "failed",
-      "steps": [],
-      "updatedAt": "2026-03-08T16:56:36.035Z"
+      "idempotencyKey": "idem-replay-001-1773582164869",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:44.892Z",
+          "finishedAt": "2026-03-15T13:42:44.895Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:44.895Z",
+          "finishedAt": "2026-03-15T13:42:44.897Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:44.898Z",
+          "finishedAt": "2026-03-15T13:42:44.900Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:44.900Z",
+          "finishedAt": "2026-03-15T13:42:44.903Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:44.903Z"
     },
     "ord-mismatch-001": {
-      "idempotencyKey": "idem-mismatch-001-1772988996214",
-      "state": "failed",
-      "steps": [],
-      "updatedAt": "2026-03-08T16:56:36.230Z"
+      "idempotencyKey": "idem-mismatch-001-1773582165109",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.130Z",
+          "finishedAt": "2026-03-15T13:42:45.134Z",
+          "durationMs": 4
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.134Z",
+          "finishedAt": "2026-03-15T13:42:45.138Z",
+          "durationMs": 4
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.138Z",
+          "finishedAt": "2026-03-15T13:42:45.140Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.140Z",
+          "finishedAt": "2026-03-15T13:42:45.143Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:45.143Z"
     },
     "ord-trace-1772988996418": {
       "idempotencyKey": "idem-trace-1772988996418",
@@ -71,6 +195,3786 @@
       "state": "failed",
       "steps": [],
       "updatedAt": "2026-03-08T16:56:36.655Z"
+    },
+    "ord-trace-1773491350223": {
+      "idempotencyKey": "idem-trace-1773491350223",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:10.246Z"
+    },
+    "ord-stress-0-1773491350423": {
+      "idempotencyKey": "idem-stress-0-1773491350423",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:10.447Z"
+    },
+    "ord-stress-1-1773491350450": {
+      "idempotencyKey": "idem-stress-1-1773491350450",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:10.471Z"
+    },
+    "ord-stress-2-1773491350474": {
+      "idempotencyKey": "idem-stress-2-1773491350474",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:10.496Z"
+    },
+    "ord-stress-3-1773491350498": {
+      "idempotencyKey": "idem-stress-3-1773491350498",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:10.520Z"
+    },
+    "ord-stress-4-1773491350523": {
+      "idempotencyKey": "idem-stress-4-1773491350523",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:10.542Z"
+    },
+    "ord-trace-1773491396102": {
+      "idempotencyKey": "idem-trace-1773491396102",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:56.130Z"
+    },
+    "ord-stress-0-1773491396302": {
+      "idempotencyKey": "idem-stress-0-1773491396302",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:56.332Z"
+    },
+    "ord-stress-1-1773491396330": {
+      "idempotencyKey": "idem-stress-1-1773491396330",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:56.356Z"
+    },
+    "ord-stress-2-1773491396354": {
+      "idempotencyKey": "idem-stress-2-1773491396354",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:56.383Z"
+    },
+    "ord-stress-3-1773491396380": {
+      "idempotencyKey": "idem-stress-3-1773491396380",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:56.405Z"
+    },
+    "ord-stress-4-1773491396403": {
+      "idempotencyKey": "idem-stress-4-1773491396403",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:29:56.429Z"
+    },
+    "ord-trace-1773491675662": {
+      "idempotencyKey": "idem-trace-1773491675662",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:34:35.676Z",
+          "finishedAt": "2026-03-14T12:34:35.680Z",
+          "durationMs": 4,
+          "result": {
+            "error": "Request failed with status code 404"
+          }
+        }
+      ],
+      "updatedAt": "2026-03-14T12:34:35.671Z"
+    },
+    "ord-stress-0-1773491675863": {
+      "idempotencyKey": "idem-stress-0-1773491675863",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:34:35.877Z",
+          "finishedAt": "2026-03-14T12:34:35.880Z",
+          "durationMs": 3,
+          "result": {
+            "error": "Request failed with status code 404"
+          }
+        }
+      ],
+      "updatedAt": "2026-03-14T12:34:35.871Z"
+    },
+    "ord-stress-1-1773491675890": {
+      "idempotencyKey": "idem-stress-1-1773491675890",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:34:35.905Z",
+          "finishedAt": "2026-03-14T12:34:35.908Z",
+          "durationMs": 3,
+          "result": {
+            "error": "Request failed with status code 404"
+          }
+        }
+      ],
+      "updatedAt": "2026-03-14T12:34:35.901Z"
+    },
+    "ord-stress-2-1773491675919": {
+      "idempotencyKey": "idem-stress-2-1773491675919",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:34:35.935Z",
+          "finishedAt": "2026-03-14T12:34:35.937Z",
+          "durationMs": 2,
+          "result": {
+            "error": "Request failed with status code 404"
+          }
+        }
+      ],
+      "updatedAt": "2026-03-14T12:34:35.930Z"
+    },
+    "ord-stress-3-1773491675949": {
+      "idempotencyKey": "idem-stress-3-1773491675949",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:34:35.964Z",
+          "finishedAt": "2026-03-14T12:34:35.967Z",
+          "durationMs": 3,
+          "result": {
+            "error": "Request failed with status code 404"
+          }
+        }
+      ],
+      "updatedAt": "2026-03-14T12:34:35.959Z"
+    },
+    "ord-stress-4-1773491675976": {
+      "idempotencyKey": "idem-stress-4-1773491675976",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:34:36.000Z",
+          "finishedAt": "2026-03-14T12:34:36.003Z",
+          "durationMs": 3,
+          "result": {
+            "error": "Request failed with status code 404"
+          }
+        }
+      ],
+      "updatedAt": "2026-03-14T12:34:35.996Z"
+    },
+    "ord-trace-1773491897219": {
+      "idempotencyKey": "idem-trace-1773491897219",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:38:17.238Z"
+    },
+    "ord-stress-0-1773491897420": {
+      "idempotencyKey": "idem-stress-0-1773491897420",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:38:17.437Z"
+    },
+    "ord-stress-1-1773491897443": {
+      "idempotencyKey": "idem-stress-1-1773491897443",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:38:17.463Z"
+    },
+    "ord-stress-2-1773491897466": {
+      "idempotencyKey": "idem-stress-2-1773491897466",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:38:17.485Z"
+    },
+    "ord-stress-3-1773491897489": {
+      "idempotencyKey": "idem-stress-3-1773491897489",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:38:17.508Z"
+    },
+    "ord-stress-4-1773491897512": {
+      "idempotencyKey": "idem-stress-4-1773491897512",
+      "state": "failed",
+      "steps": [],
+      "updatedAt": "2026-03-14T12:38:17.532Z"
+    },
+    "ord-trace-1773492119566": {
+      "idempotencyKey": "idem-trace-1773492119566",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:41:59.589Z",
+          "finishedAt": "2026-03-14T12:41:59.593Z",
+          "durationMs": 4,
+          "error": "Request failed with status code 404"
+        }
+      ],
+      "updatedAt": "2026-03-14T12:41:59.593Z"
+    },
+    "ord-stress-0-1773492119778": {
+      "idempotencyKey": "idem-stress-0-1773492119778",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:41:59.800Z",
+          "finishedAt": "2026-03-14T12:41:59.803Z",
+          "durationMs": 3,
+          "error": "Request failed with status code 404"
+        }
+      ],
+      "updatedAt": "2026-03-14T12:41:59.803Z"
+    },
+    "ord-stress-1-1773492119806": {
+      "idempotencyKey": "idem-stress-1-1773492119806",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:41:59.829Z",
+          "finishedAt": "2026-03-14T12:41:59.833Z",
+          "durationMs": 4,
+          "error": "Request failed with status code 404"
+        }
+      ],
+      "updatedAt": "2026-03-14T12:41:59.833Z"
+    },
+    "ord-stress-2-1773492119834": {
+      "idempotencyKey": "idem-stress-2-1773492119834",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:41:59.858Z",
+          "finishedAt": "2026-03-14T12:41:59.861Z",
+          "durationMs": 3,
+          "error": "Request failed with status code 404"
+        }
+      ],
+      "updatedAt": "2026-03-14T12:41:59.861Z"
+    },
+    "ord-stress-3-1773492119865": {
+      "idempotencyKey": "idem-stress-3-1773492119865",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:41:59.888Z",
+          "finishedAt": "2026-03-14T12:41:59.891Z",
+          "durationMs": 3,
+          "error": "Request failed with status code 404"
+        }
+      ],
+      "updatedAt": "2026-03-14T12:41:59.891Z"
+    },
+    "ord-stress-4-1773492119893": {
+      "idempotencyKey": "idem-stress-4-1773492119893",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:41:59.918Z",
+          "finishedAt": "2026-03-14T12:41:59.921Z",
+          "durationMs": 3,
+          "error": "Request failed with status code 404"
+        }
+      ],
+      "updatedAt": "2026-03-14T12:41:59.921Z"
+    },
+    "ord-trace-1773492294237": {
+      "orderId": "ord-trace-1773492294237",
+      "idempotencyKey": "idem-trace-1773492294237",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:44:54.253Z",
+          "finishedAt": "2026-03-14T12:44:54.258Z",
+          "durationMs": 5,
+          "error": "error"
+        }
+      ],
+      "state": "failed",
+      "updatedAt": "2026-03-14T12:44:54.258Z"
+    },
+    "ord-stress-0-1773492294442": {
+      "orderId": "ord-stress-0-1773492294442",
+      "idempotencyKey": "idem-stress-0-1773492294442",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:44:54.456Z",
+          "finishedAt": "2026-03-14T12:44:54.459Z",
+          "durationMs": 3,
+          "error": "error"
+        }
+      ],
+      "state": "failed",
+      "updatedAt": "2026-03-14T12:44:54.459Z"
+    },
+    "ord-stress-1-1773492294464": {
+      "orderId": "ord-stress-1-1773492294464",
+      "idempotencyKey": "idem-stress-1-1773492294464",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:44:54.483Z",
+          "finishedAt": "2026-03-14T12:44:54.487Z",
+          "durationMs": 4,
+          "error": "error"
+        }
+      ],
+      "state": "failed",
+      "updatedAt": "2026-03-14T12:44:54.487Z"
+    },
+    "ord-stress-2-1773492294491": {
+      "orderId": "ord-stress-2-1773492294491",
+      "idempotencyKey": "idem-stress-2-1773492294491",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:44:54.510Z",
+          "finishedAt": "2026-03-14T12:44:54.513Z",
+          "durationMs": 3,
+          "error": "error"
+        }
+      ],
+      "state": "failed",
+      "updatedAt": "2026-03-14T12:44:54.513Z"
+    },
+    "ord-stress-3-1773492294518": {
+      "orderId": "ord-stress-3-1773492294518",
+      "idempotencyKey": "idem-stress-3-1773492294518",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:44:54.536Z",
+          "finishedAt": "2026-03-14T12:44:54.539Z",
+          "durationMs": 3,
+          "error": "error"
+        }
+      ],
+      "state": "failed",
+      "updatedAt": "2026-03-14T12:44:54.539Z"
+    },
+    "ord-stress-4-1773492294543": {
+      "orderId": "ord-stress-4-1773492294543",
+      "idempotencyKey": "idem-stress-4-1773492294543",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:44:54.564Z",
+          "finishedAt": "2026-03-14T12:44:54.567Z",
+          "durationMs": 3,
+          "error": "error"
+        }
+      ],
+      "state": "failed",
+      "updatedAt": "2026-03-14T12:44:54.567Z"
+    },
+    "ord-trace-1773492622582": {
+      "idempotencyKey": "idem-trace-1773492622582",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:50:22.602Z",
+          "finishedAt": "2026-03-14T12:50:22.602Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-14T12:50:22.602Z"
+    },
+    "ord-stress-0-1773492622783": {
+      "idempotencyKey": "idem-stress-0-1773492622783",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:50:22.803Z",
+          "finishedAt": "2026-03-14T12:50:22.803Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-14T12:50:22.803Z"
+    },
+    "ord-stress-1-1773492622812": {
+      "idempotencyKey": "idem-stress-1-1773492622812",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:50:22.834Z",
+          "finishedAt": "2026-03-14T12:50:22.834Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-14T12:50:22.834Z"
+    },
+    "ord-stress-2-1773492622843": {
+      "idempotencyKey": "idem-stress-2-1773492622843",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:50:22.864Z",
+          "finishedAt": "2026-03-14T12:50:22.864Z",
+          "durationMs": 4
+        }
+      ],
+      "updatedAt": "2026-03-14T12:50:22.864Z"
+    },
+    "ord-stress-3-1773492622871": {
+      "idempotencyKey": "idem-stress-3-1773492622871",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:50:22.892Z",
+          "finishedAt": "2026-03-14T12:50:22.892Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-14T12:50:22.892Z"
+    },
+    "ord-stress-4-1773492622899": {
+      "idempotencyKey": "idem-stress-4-1773492622899",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:50:22.919Z",
+          "finishedAt": "2026-03-14T12:50:22.919Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-14T12:50:22.919Z"
+    },
+    "ord-trace-1773492723059": {
+      "idempotencyKey": "idem-trace-1773492723059",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:52:03.082Z",
+          "finishedAt": "2026-03-14T12:52:03.082Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-14T12:52:03.082Z"
+    },
+    "ord-stress-0-1773492723259": {
+      "idempotencyKey": "idem-stress-0-1773492723259",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:52:03.280Z",
+          "finishedAt": "2026-03-14T12:52:03.280Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-14T12:52:03.280Z"
+    },
+    "ord-stress-1-1773492723295": {
+      "idempotencyKey": "idem-stress-1-1773492723295",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:52:03.318Z",
+          "finishedAt": "2026-03-14T12:52:03.318Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-14T12:52:03.318Z"
+    },
+    "ord-stress-2-1773492723327": {
+      "idempotencyKey": "idem-stress-2-1773492723327",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:52:03.348Z",
+          "finishedAt": "2026-03-14T12:52:03.348Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-14T12:52:03.348Z"
+    },
+    "ord-stress-3-1773492723357": {
+      "idempotencyKey": "idem-stress-3-1773492723357",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:52:03.379Z",
+          "finishedAt": "2026-03-14T12:52:03.379Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-14T12:52:03.379Z"
+    },
+    "ord-stress-4-1773492723387": {
+      "idempotencyKey": "idem-stress-4-1773492723387",
+      "state": "failed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "failed",
+          "startedAt": "2026-03-14T12:52:03.409Z",
+          "finishedAt": "2026-03-14T12:52:03.409Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-14T12:52:03.409Z"
+    },
+    "ord-trace-1773580047451": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.460Z",
+          "finishedAt": "2026-03-15T13:07:27.463Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.463Z",
+          "finishedAt": "2026-03-15T13:07:27.466Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.466Z",
+          "finishedAt": "2026-03-15T13:07:27.468Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.468Z",
+          "finishedAt": "2026-03-15T13:07:27.471Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:07:27.473Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773580047666": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.676Z",
+          "finishedAt": "2026-03-15T13:07:27.679Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.679Z",
+          "finishedAt": "2026-03-15T13:07:27.681Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.681Z",
+          "finishedAt": "2026-03-15T13:07:27.683Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.683Z",
+          "finishedAt": "2026-03-15T13:07:27.686Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:07:27.688Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773580047697": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.713Z",
+          "finishedAt": "2026-03-15T13:07:27.716Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.716Z",
+          "finishedAt": "2026-03-15T13:07:27.718Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.718Z",
+          "finishedAt": "2026-03-15T13:07:27.721Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.721Z",
+          "finishedAt": "2026-03-15T13:07:27.723Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:07:27.726Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773580047734": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.749Z",
+          "finishedAt": "2026-03-15T13:07:27.753Z",
+          "durationMs": 4
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.753Z",
+          "finishedAt": "2026-03-15T13:07:27.755Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.755Z",
+          "finishedAt": "2026-03-15T13:07:27.757Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.757Z",
+          "finishedAt": "2026-03-15T13:07:27.760Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:07:27.762Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773580047770": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.786Z",
+          "finishedAt": "2026-03-15T13:07:27.788Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.788Z",
+          "finishedAt": "2026-03-15T13:07:27.790Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.790Z",
+          "finishedAt": "2026-03-15T13:07:27.793Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.793Z",
+          "finishedAt": "2026-03-15T13:07:27.795Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:07:27.798Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773580047807": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.822Z",
+          "finishedAt": "2026-03-15T13:07:27.825Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.825Z",
+          "finishedAt": "2026-03-15T13:07:27.827Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.827Z",
+          "finishedAt": "2026-03-15T13:07:27.830Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:07:27.830Z",
+          "finishedAt": "2026-03-15T13:07:27.832Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:07:27.835Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773580231355": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.366Z",
+          "finishedAt": "2026-03-15T13:10:31.369Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.369Z",
+          "finishedAt": "2026-03-15T13:10:31.372Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.373Z",
+          "finishedAt": "2026-03-15T13:10:31.375Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.375Z",
+          "finishedAt": "2026-03-15T13:10:31.378Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:10:31.378Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773580231581": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.593Z",
+          "finishedAt": "2026-03-15T13:10:31.596Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.596Z",
+          "finishedAt": "2026-03-15T13:10:31.599Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.599Z",
+          "finishedAt": "2026-03-15T13:10:31.601Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.602Z",
+          "finishedAt": "2026-03-15T13:10:31.604Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:10:31.604Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773580231614": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.631Z",
+          "finishedAt": "2026-03-15T13:10:31.634Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.634Z",
+          "finishedAt": "2026-03-15T13:10:31.636Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.636Z",
+          "finishedAt": "2026-03-15T13:10:31.639Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.639Z",
+          "finishedAt": "2026-03-15T13:10:31.641Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:10:31.641Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773580231651": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.667Z",
+          "finishedAt": "2026-03-15T13:10:31.670Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.670Z",
+          "finishedAt": "2026-03-15T13:10:31.672Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.672Z",
+          "finishedAt": "2026-03-15T13:10:31.675Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.675Z",
+          "finishedAt": "2026-03-15T13:10:31.679Z",
+          "durationMs": 4
+        }
+      ],
+      "updatedAt": "2026-03-15T13:10:31.679Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773580231690": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.707Z",
+          "finishedAt": "2026-03-15T13:10:31.710Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.710Z",
+          "finishedAt": "2026-03-15T13:10:31.713Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.713Z",
+          "finishedAt": "2026-03-15T13:10:31.716Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.716Z",
+          "finishedAt": "2026-03-15T13:10:31.719Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:10:31.719Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773580231729": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.744Z",
+          "finishedAt": "2026-03-15T13:10:31.747Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.747Z",
+          "finishedAt": "2026-03-15T13:10:31.750Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.750Z",
+          "finishedAt": "2026-03-15T13:10:31.753Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:10:31.753Z",
+          "finishedAt": "2026-03-15T13:10:31.756Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:10:31.756Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773580317635": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.646Z",
+          "finishedAt": "2026-03-15T13:11:57.649Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.649Z",
+          "finishedAt": "2026-03-15T13:11:57.652Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.652Z",
+          "finishedAt": "2026-03-15T13:11:57.654Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.654Z",
+          "finishedAt": "2026-03-15T13:11:57.657Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:11:57.657Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773580317855": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.869Z",
+          "finishedAt": "2026-03-15T13:11:57.872Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.872Z",
+          "finishedAt": "2026-03-15T13:11:57.874Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.874Z",
+          "finishedAt": "2026-03-15T13:11:57.876Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.877Z",
+          "finishedAt": "2026-03-15T13:11:57.879Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:11:57.879Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773580317888": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.902Z",
+          "finishedAt": "2026-03-15T13:11:57.905Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.905Z",
+          "finishedAt": "2026-03-15T13:11:57.907Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.907Z",
+          "finishedAt": "2026-03-15T13:11:57.909Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.909Z",
+          "finishedAt": "2026-03-15T13:11:57.912Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:11:57.912Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773580317921": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.936Z",
+          "finishedAt": "2026-03-15T13:11:57.939Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.939Z",
+          "finishedAt": "2026-03-15T13:11:57.942Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.942Z",
+          "finishedAt": "2026-03-15T13:11:57.945Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.945Z",
+          "finishedAt": "2026-03-15T13:11:57.955Z",
+          "durationMs": 10
+        }
+      ],
+      "updatedAt": "2026-03-15T13:11:57.955Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773580317966": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.982Z",
+          "finishedAt": "2026-03-15T13:11:57.985Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.985Z",
+          "finishedAt": "2026-03-15T13:11:57.987Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.987Z",
+          "finishedAt": "2026-03-15T13:11:57.989Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:57.989Z",
+          "finishedAt": "2026-03-15T13:11:57.993Z",
+          "durationMs": 4
+        }
+      ],
+      "updatedAt": "2026-03-15T13:11:57.993Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773580318002": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:58.017Z",
+          "finishedAt": "2026-03-15T13:11:58.019Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:58.019Z",
+          "finishedAt": "2026-03-15T13:11:58.021Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:58.021Z",
+          "finishedAt": "2026-03-15T13:11:58.024Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:11:58.024Z",
+          "finishedAt": "2026-03-15T13:11:58.027Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:11:58.027Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773580496554": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.579Z",
+          "finishedAt": "2026-03-15T13:14:56.582Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.582Z",
+          "finishedAt": "2026-03-15T13:14:56.585Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.585Z",
+          "finishedAt": "2026-03-15T13:14:56.587Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.587Z",
+          "finishedAt": "2026-03-15T13:14:56.589Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:14:56.589Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773580496782": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.805Z",
+          "finishedAt": "2026-03-15T13:14:56.808Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.808Z",
+          "finishedAt": "2026-03-15T13:14:56.810Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.810Z",
+          "finishedAt": "2026-03-15T13:14:56.812Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.812Z",
+          "finishedAt": "2026-03-15T13:14:56.815Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:14:56.815Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773580496829": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.853Z",
+          "finishedAt": "2026-03-15T13:14:56.856Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.856Z",
+          "finishedAt": "2026-03-15T13:14:56.858Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.858Z",
+          "finishedAt": "2026-03-15T13:14:56.861Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.861Z",
+          "finishedAt": "2026-03-15T13:14:56.863Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:14:56.863Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773580496874": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.899Z",
+          "finishedAt": "2026-03-15T13:14:56.901Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.901Z",
+          "finishedAt": "2026-03-15T13:14:56.903Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.904Z",
+          "finishedAt": "2026-03-15T13:14:56.907Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.907Z",
+          "finishedAt": "2026-03-15T13:14:56.909Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:14:56.909Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773580496919": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.945Z",
+          "finishedAt": "2026-03-15T13:14:56.948Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.948Z",
+          "finishedAt": "2026-03-15T13:14:56.950Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.950Z",
+          "finishedAt": "2026-03-15T13:14:56.952Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.952Z",
+          "finishedAt": "2026-03-15T13:14:56.954Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:14:56.954Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773580496965": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.992Z",
+          "finishedAt": "2026-03-15T13:14:56.995Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.995Z",
+          "finishedAt": "2026-03-15T13:14:56.997Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.997Z",
+          "finishedAt": "2026-03-15T13:14:56.999Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:14:56.999Z",
+          "finishedAt": "2026-03-15T13:14:57.003Z",
+          "durationMs": 4
+        }
+      ],
+      "updatedAt": "2026-03-15T13:14:57.003Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773580692207": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.219Z",
+          "finishedAt": "2026-03-15T13:18:12.222Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.222Z",
+          "finishedAt": "2026-03-15T13:18:12.224Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.224Z",
+          "finishedAt": "2026-03-15T13:18:12.226Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.226Z",
+          "finishedAt": "2026-03-15T13:18:12.228Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:18:12.228Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773580692423": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.435Z",
+          "finishedAt": "2026-03-15T13:18:12.438Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.438Z",
+          "finishedAt": "2026-03-15T13:18:12.441Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.441Z",
+          "finishedAt": "2026-03-15T13:18:12.445Z",
+          "durationMs": 4
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.445Z",
+          "finishedAt": "2026-03-15T13:18:12.447Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:18:12.447Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773580692460": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.474Z",
+          "finishedAt": "2026-03-15T13:18:12.477Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.477Z",
+          "finishedAt": "2026-03-15T13:18:12.479Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.479Z",
+          "finishedAt": "2026-03-15T13:18:12.482Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.482Z",
+          "finishedAt": "2026-03-15T13:18:12.484Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:18:12.484Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773580692496": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.510Z",
+          "finishedAt": "2026-03-15T13:18:12.512Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.512Z",
+          "finishedAt": "2026-03-15T13:18:12.514Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.514Z",
+          "finishedAt": "2026-03-15T13:18:12.517Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.517Z",
+          "finishedAt": "2026-03-15T13:18:12.520Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:18:12.520Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773580692532": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.547Z",
+          "finishedAt": "2026-03-15T13:18:12.550Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.550Z",
+          "finishedAt": "2026-03-15T13:18:12.552Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.552Z",
+          "finishedAt": "2026-03-15T13:18:12.554Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.554Z",
+          "finishedAt": "2026-03-15T13:18:12.557Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:18:12.557Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773580692569": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.586Z",
+          "finishedAt": "2026-03-15T13:18:12.588Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.588Z",
+          "finishedAt": "2026-03-15T13:18:12.590Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.590Z",
+          "finishedAt": "2026-03-15T13:18:12.592Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:18:12.592Z",
+          "finishedAt": "2026-03-15T13:18:12.595Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:18:12.595Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773580858640": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.651Z",
+          "finishedAt": "2026-03-15T13:20:58.654Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.654Z",
+          "finishedAt": "2026-03-15T13:20:58.657Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.657Z",
+          "finishedAt": "2026-03-15T13:20:58.660Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.660Z",
+          "finishedAt": "2026-03-15T13:20:58.662Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:20:58.662Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773580858862": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.875Z",
+          "finishedAt": "2026-03-15T13:20:58.878Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.878Z",
+          "finishedAt": "2026-03-15T13:20:58.880Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.880Z",
+          "finishedAt": "2026-03-15T13:20:58.883Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.883Z",
+          "finishedAt": "2026-03-15T13:20:58.886Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:20:58.886Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773580858898": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.913Z",
+          "finishedAt": "2026-03-15T13:20:58.916Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.916Z",
+          "finishedAt": "2026-03-15T13:20:58.918Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.918Z",
+          "finishedAt": "2026-03-15T13:20:58.920Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.920Z",
+          "finishedAt": "2026-03-15T13:20:58.922Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:20:58.922Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773580858935": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.951Z",
+          "finishedAt": "2026-03-15T13:20:58.953Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.953Z",
+          "finishedAt": "2026-03-15T13:20:58.955Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.955Z",
+          "finishedAt": "2026-03-15T13:20:58.958Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.958Z",
+          "finishedAt": "2026-03-15T13:20:58.960Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:20:58.960Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773580858972": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.988Z",
+          "finishedAt": "2026-03-15T13:20:58.990Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.990Z",
+          "finishedAt": "2026-03-15T13:20:58.992Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.992Z",
+          "finishedAt": "2026-03-15T13:20:58.994Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:58.994Z",
+          "finishedAt": "2026-03-15T13:20:58.996Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:20:58.996Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773580859009": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:59.025Z",
+          "finishedAt": "2026-03-15T13:20:59.027Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:59.027Z",
+          "finishedAt": "2026-03-15T13:20:59.029Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:59.029Z",
+          "finishedAt": "2026-03-15T13:20:59.032Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:20:59.032Z",
+          "finishedAt": "2026-03-15T13:20:59.035Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:20:59.035Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773581023031": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.041Z",
+          "finishedAt": "2026-03-15T13:23:43.044Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.044Z",
+          "finishedAt": "2026-03-15T13:23:43.047Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.047Z",
+          "finishedAt": "2026-03-15T13:23:43.049Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.049Z",
+          "finishedAt": "2026-03-15T13:23:43.051Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:23:43.051Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773581023253": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.262Z",
+          "finishedAt": "2026-03-15T13:23:43.265Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.265Z",
+          "finishedAt": "2026-03-15T13:23:43.267Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.267Z",
+          "finishedAt": "2026-03-15T13:23:43.270Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.270Z",
+          "finishedAt": "2026-03-15T13:23:43.272Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:23:43.272Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773581023288": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.300Z",
+          "finishedAt": "2026-03-15T13:23:43.303Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.303Z",
+          "finishedAt": "2026-03-15T13:23:43.305Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.305Z",
+          "finishedAt": "2026-03-15T13:23:43.307Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.307Z",
+          "finishedAt": "2026-03-15T13:23:43.309Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:23:43.309Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773581023325": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.339Z",
+          "finishedAt": "2026-03-15T13:23:43.341Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.342Z",
+          "finishedAt": "2026-03-15T13:23:43.344Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.344Z",
+          "finishedAt": "2026-03-15T13:23:43.347Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.347Z",
+          "finishedAt": "2026-03-15T13:23:43.349Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:23:43.349Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773581023365": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.377Z",
+          "finishedAt": "2026-03-15T13:23:43.380Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.380Z",
+          "finishedAt": "2026-03-15T13:23:43.382Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.382Z",
+          "finishedAt": "2026-03-15T13:23:43.384Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.384Z",
+          "finishedAt": "2026-03-15T13:23:43.386Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:23:43.386Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773581023402": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.415Z",
+          "finishedAt": "2026-03-15T13:23:43.418Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.418Z",
+          "finishedAt": "2026-03-15T13:23:43.420Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.420Z",
+          "finishedAt": "2026-03-15T13:23:43.422Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:23:43.422Z",
+          "finishedAt": "2026-03-15T13:23:43.424Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:23:43.424Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773581173176": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.190Z",
+          "finishedAt": "2026-03-15T13:26:13.193Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.193Z",
+          "finishedAt": "2026-03-15T13:26:13.196Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.196Z",
+          "finishedAt": "2026-03-15T13:26:13.198Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.198Z",
+          "finishedAt": "2026-03-15T13:26:13.201Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:26:13.201Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773581173402": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.413Z",
+          "finishedAt": "2026-03-15T13:26:13.416Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.416Z",
+          "finishedAt": "2026-03-15T13:26:13.419Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.419Z",
+          "finishedAt": "2026-03-15T13:26:13.421Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.421Z",
+          "finishedAt": "2026-03-15T13:26:13.424Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:26:13.424Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773581173439": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.458Z",
+          "finishedAt": "2026-03-15T13:26:13.462Z",
+          "durationMs": 4
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.462Z",
+          "finishedAt": "2026-03-15T13:26:13.464Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.464Z",
+          "finishedAt": "2026-03-15T13:26:13.467Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.467Z",
+          "finishedAt": "2026-03-15T13:26:13.469Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:26:13.469Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773581173485": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.503Z",
+          "finishedAt": "2026-03-15T13:26:13.505Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.505Z",
+          "finishedAt": "2026-03-15T13:26:13.508Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.508Z",
+          "finishedAt": "2026-03-15T13:26:13.510Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.510Z",
+          "finishedAt": "2026-03-15T13:26:13.512Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:26:13.512Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773581173528": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.546Z",
+          "finishedAt": "2026-03-15T13:26:13.549Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.549Z",
+          "finishedAt": "2026-03-15T13:26:13.551Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.551Z",
+          "finishedAt": "2026-03-15T13:26:13.554Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.554Z",
+          "finishedAt": "2026-03-15T13:26:13.557Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:26:13.557Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773581173571": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.588Z",
+          "finishedAt": "2026-03-15T13:26:13.592Z",
+          "durationMs": 4
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.592Z",
+          "finishedAt": "2026-03-15T13:26:13.595Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.595Z",
+          "finishedAt": "2026-03-15T13:26:13.598Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:26:13.598Z",
+          "finishedAt": "2026-03-15T13:26:13.602Z",
+          "durationMs": 4
+        }
+      ],
+      "updatedAt": "2026-03-15T13:26:13.602Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773581286596": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.610Z",
+          "finishedAt": "2026-03-15T13:28:06.613Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.613Z",
+          "finishedAt": "2026-03-15T13:28:06.615Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.615Z",
+          "finishedAt": "2026-03-15T13:28:06.617Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.617Z",
+          "finishedAt": "2026-03-15T13:28:06.620Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:28:06.620Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773581286831": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.843Z",
+          "finishedAt": "2026-03-15T13:28:06.846Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.846Z",
+          "finishedAt": "2026-03-15T13:28:06.848Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.848Z",
+          "finishedAt": "2026-03-15T13:28:06.851Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.851Z",
+          "finishedAt": "2026-03-15T13:28:06.853Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:28:06.853Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773581286868": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.887Z",
+          "finishedAt": "2026-03-15T13:28:06.890Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.890Z",
+          "finishedAt": "2026-03-15T13:28:06.893Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.893Z",
+          "finishedAt": "2026-03-15T13:28:06.895Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.895Z",
+          "finishedAt": "2026-03-15T13:28:06.897Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:28:06.897Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773581286915": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.934Z",
+          "finishedAt": "2026-03-15T13:28:06.936Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.936Z",
+          "finishedAt": "2026-03-15T13:28:06.938Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.938Z",
+          "finishedAt": "2026-03-15T13:28:06.942Z",
+          "durationMs": 4
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.942Z",
+          "finishedAt": "2026-03-15T13:28:06.944Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:28:06.944Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773581286960": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.980Z",
+          "finishedAt": "2026-03-15T13:28:06.982Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.982Z",
+          "finishedAt": "2026-03-15T13:28:06.985Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.985Z",
+          "finishedAt": "2026-03-15T13:28:06.987Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:06.987Z",
+          "finishedAt": "2026-03-15T13:28:06.989Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:28:06.989Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773581287007": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:07.026Z",
+          "finishedAt": "2026-03-15T13:28:07.029Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:07.029Z",
+          "finishedAt": "2026-03-15T13:28:07.031Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:07.031Z",
+          "finishedAt": "2026-03-15T13:28:07.033Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:28:07.033Z",
+          "finishedAt": "2026-03-15T13:28:07.036Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:28:07.036Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773581437746": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:37.769Z",
+          "finishedAt": "2026-03-15T13:30:37.773Z",
+          "durationMs": 4
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:37.773Z",
+          "finishedAt": "2026-03-15T13:30:37.777Z",
+          "durationMs": 4
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:37.777Z",
+          "finishedAt": "2026-03-15T13:30:37.780Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:37.780Z",
+          "finishedAt": "2026-03-15T13:30:37.783Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:30:37.783Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773581437999": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.023Z",
+          "finishedAt": "2026-03-15T13:30:38.025Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.025Z",
+          "finishedAt": "2026-03-15T13:30:38.028Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.028Z",
+          "finishedAt": "2026-03-15T13:30:38.030Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.030Z",
+          "finishedAt": "2026-03-15T13:30:38.032Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:30:38.032Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773581438070": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.092Z",
+          "finishedAt": "2026-03-15T13:30:38.095Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.095Z",
+          "finishedAt": "2026-03-15T13:30:38.097Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.097Z",
+          "finishedAt": "2026-03-15T13:30:38.100Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.100Z",
+          "finishedAt": "2026-03-15T13:30:38.103Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:30:38.103Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773581438141": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.162Z",
+          "finishedAt": "2026-03-15T13:30:38.165Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.165Z",
+          "finishedAt": "2026-03-15T13:30:38.167Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.167Z",
+          "finishedAt": "2026-03-15T13:30:38.169Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.169Z",
+          "finishedAt": "2026-03-15T13:30:38.171Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:30:38.171Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773581438224": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.252Z",
+          "finishedAt": "2026-03-15T13:30:38.256Z",
+          "durationMs": 4
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.256Z",
+          "finishedAt": "2026-03-15T13:30:38.259Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.259Z",
+          "finishedAt": "2026-03-15T13:30:38.263Z",
+          "durationMs": 4
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.263Z",
+          "finishedAt": "2026-03-15T13:30:38.265Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:30:38.265Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773581438302": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.329Z",
+          "finishedAt": "2026-03-15T13:30:38.332Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.332Z",
+          "finishedAt": "2026-03-15T13:30:38.335Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.335Z",
+          "finishedAt": "2026-03-15T13:30:38.337Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:30:38.337Z",
+          "finishedAt": "2026-03-15T13:30:38.339Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:30:38.339Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773581609885": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:29.902Z",
+          "finishedAt": "2026-03-15T13:33:29.905Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:29.905Z",
+          "finishedAt": "2026-03-15T13:33:29.909Z",
+          "durationMs": 4
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:29.909Z",
+          "finishedAt": "2026-03-15T13:33:29.911Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:29.911Z",
+          "finishedAt": "2026-03-15T13:33:29.914Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:33:29.914Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-0-1773581610109": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.127Z",
+          "finishedAt": "2026-03-15T13:33:30.130Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.130Z",
+          "finishedAt": "2026-03-15T13:33:30.133Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.133Z",
+          "finishedAt": "2026-03-15T13:33:30.135Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.135Z",
+          "finishedAt": "2026-03-15T13:33:30.137Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:33:30.137Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-1-1773581610153": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.173Z",
+          "finishedAt": "2026-03-15T13:33:30.176Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.176Z",
+          "finishedAt": "2026-03-15T13:33:30.178Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.178Z",
+          "finishedAt": "2026-03-15T13:33:30.180Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.180Z",
+          "finishedAt": "2026-03-15T13:33:30.182Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:33:30.182Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-2-1773581610196": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.216Z",
+          "finishedAt": "2026-03-15T13:33:30.219Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.219Z",
+          "finishedAt": "2026-03-15T13:33:30.221Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.221Z",
+          "finishedAt": "2026-03-15T13:33:30.224Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.224Z",
+          "finishedAt": "2026-03-15T13:33:30.227Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:33:30.227Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-3-1773581610244": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.263Z",
+          "finishedAt": "2026-03-15T13:33:30.266Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.266Z",
+          "finishedAt": "2026-03-15T13:33:30.268Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.268Z",
+          "finishedAt": "2026-03-15T13:33:30.270Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.270Z",
+          "finishedAt": "2026-03-15T13:33:30.272Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:33:30.272Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-stress-4-1773581610287": {
+      "state": "completed",
+      "trace": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.309Z",
+          "finishedAt": "2026-03-15T13:33:30.312Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.312Z",
+          "finishedAt": "2026-03-15T13:33:30.314Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.314Z",
+          "finishedAt": "2026-03-15T13:33:30.316Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:33:30.316Z",
+          "finishedAt": "2026-03-15T13:33:30.318Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:33:30.318Z",
+      "idempotencyKey": "fixed-key",
+      "steps": []
+    },
+    "ord-trace-1773581707091": {
+      "idempotencyKey": "idem-trace-1773581707091",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.106Z",
+          "finishedAt": "2026-03-15T13:35:07.109Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.109Z",
+          "finishedAt": "2026-03-15T13:35:07.112Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.112Z",
+          "finishedAt": "2026-03-15T13:35:07.115Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.115Z",
+          "finishedAt": "2026-03-15T13:35:07.117Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:35:07.117Z"
+    },
+    "ord-stress-0-1773581707323": {
+      "idempotencyKey": "idem-stress-0-1773581707323",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.337Z",
+          "finishedAt": "2026-03-15T13:35:07.340Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.340Z",
+          "finishedAt": "2026-03-15T13:35:07.342Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.342Z",
+          "finishedAt": "2026-03-15T13:35:07.345Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.345Z",
+          "finishedAt": "2026-03-15T13:35:07.347Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:35:07.347Z"
+    },
+    "ord-stress-1-1773581707370": {
+      "idempotencyKey": "idem-stress-1-1773581707370",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.391Z",
+          "finishedAt": "2026-03-15T13:35:07.395Z",
+          "durationMs": 4
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.395Z",
+          "finishedAt": "2026-03-15T13:35:07.397Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.397Z",
+          "finishedAt": "2026-03-15T13:35:07.399Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.399Z",
+          "finishedAt": "2026-03-15T13:35:07.402Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:35:07.402Z"
+    },
+    "ord-stress-2-1773581707423": {
+      "idempotencyKey": "idem-stress-2-1773581707423",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.443Z",
+          "finishedAt": "2026-03-15T13:35:07.445Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.445Z",
+          "finishedAt": "2026-03-15T13:35:07.448Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.448Z",
+          "finishedAt": "2026-03-15T13:35:07.450Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.450Z",
+          "finishedAt": "2026-03-15T13:35:07.453Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:35:07.453Z"
+    },
+    "ord-stress-3-1773581707472": {
+      "idempotencyKey": "idem-stress-3-1773581707472",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.495Z",
+          "finishedAt": "2026-03-15T13:35:07.498Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.498Z",
+          "finishedAt": "2026-03-15T13:35:07.501Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.501Z",
+          "finishedAt": "2026-03-15T13:35:07.503Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.503Z",
+          "finishedAt": "2026-03-15T13:35:07.506Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:35:07.506Z"
+    },
+    "ord-stress-4-1773581707531": {
+      "idempotencyKey": "idem-stress-4-1773581707531",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.555Z",
+          "finishedAt": "2026-03-15T13:35:07.561Z",
+          "durationMs": 6
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.561Z",
+          "finishedAt": "2026-03-15T13:35:07.564Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.564Z",
+          "finishedAt": "2026-03-15T13:35:07.568Z",
+          "durationMs": 4
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:35:07.568Z",
+          "finishedAt": "2026-03-15T13:35:07.573Z",
+          "durationMs": 5
+        }
+      ],
+      "updatedAt": "2026-03-15T13:35:07.573Z"
+    },
+    "ord-trace-1773581886711": {
+      "idempotencyKey": "idem-trace-1773581886711",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:06.736Z",
+          "finishedAt": "2026-03-15T13:38:06.739Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:06.739Z",
+          "finishedAt": "2026-03-15T13:38:06.744Z",
+          "durationMs": 5
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:06.744Z",
+          "finishedAt": "2026-03-15T13:38:06.747Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:06.747Z",
+          "finishedAt": "2026-03-15T13:38:06.750Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:38:06.750Z"
+    },
+    "ord-stress-0-1773581886951": {
+      "idempotencyKey": "idem-stress-0-1773581886951",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:06.977Z",
+          "finishedAt": "2026-03-15T13:38:06.980Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:06.980Z",
+          "finishedAt": "2026-03-15T13:38:06.982Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:06.982Z",
+          "finishedAt": "2026-03-15T13:38:06.985Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:06.985Z",
+          "finishedAt": "2026-03-15T13:38:06.987Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:38:06.987Z"
+    },
+    "ord-stress-1-1773581886997": {
+      "idempotencyKey": "idem-stress-1-1773581886997",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.025Z",
+          "finishedAt": "2026-03-15T13:38:07.027Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.027Z",
+          "finishedAt": "2026-03-15T13:38:07.030Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.030Z",
+          "finishedAt": "2026-03-15T13:38:07.032Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.032Z",
+          "finishedAt": "2026-03-15T13:38:07.034Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:38:07.034Z"
+    },
+    "ord-stress-2-1773581887046": {
+      "idempotencyKey": "idem-stress-2-1773581887046",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.073Z",
+          "finishedAt": "2026-03-15T13:38:07.075Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.075Z",
+          "finishedAt": "2026-03-15T13:38:07.077Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.077Z",
+          "finishedAt": "2026-03-15T13:38:07.079Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.079Z",
+          "finishedAt": "2026-03-15T13:38:07.082Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:38:07.082Z"
+    },
+    "ord-stress-3-1773581887093": {
+      "idempotencyKey": "idem-stress-3-1773581887093",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.121Z",
+          "finishedAt": "2026-03-15T13:38:07.123Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.123Z",
+          "finishedAt": "2026-03-15T13:38:07.126Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.126Z",
+          "finishedAt": "2026-03-15T13:38:07.128Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.128Z",
+          "finishedAt": "2026-03-15T13:38:07.131Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:38:07.131Z"
+    },
+    "ord-stress-4-1773581887141": {
+      "idempotencyKey": "idem-stress-4-1773581887141",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.167Z",
+          "finishedAt": "2026-03-15T13:38:07.170Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.170Z",
+          "finishedAt": "2026-03-15T13:38:07.172Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.172Z",
+          "finishedAt": "2026-03-15T13:38:07.174Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:38:07.174Z",
+          "finishedAt": "2026-03-15T13:38:07.177Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:38:07.177Z"
+    },
+    "ord-trace-1773582000378": {
+      "idempotencyKey": "idem-trace-1773582000378",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.404Z",
+          "finishedAt": "2026-03-15T13:40:00.407Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.407Z",
+          "finishedAt": "2026-03-15T13:40:00.410Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.410Z",
+          "finishedAt": "2026-03-15T13:40:00.415Z",
+          "durationMs": 5
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.415Z",
+          "finishedAt": "2026-03-15T13:40:00.417Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:40:00.417Z"
+    },
+    "ord-stress-0-1773582000623": {
+      "idempotencyKey": "idem-stress-0-1773582000623",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.646Z",
+          "finishedAt": "2026-03-15T13:40:00.649Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.649Z",
+          "finishedAt": "2026-03-15T13:40:00.651Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.651Z",
+          "finishedAt": "2026-03-15T13:40:00.654Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.654Z",
+          "finishedAt": "2026-03-15T13:40:00.656Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:40:00.656Z"
+    },
+    "ord-stress-1-1773582000671": {
+      "idempotencyKey": "idem-stress-1-1773582000671",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.698Z",
+          "finishedAt": "2026-03-15T13:40:00.701Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.701Z",
+          "finishedAt": "2026-03-15T13:40:00.703Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.703Z",
+          "finishedAt": "2026-03-15T13:40:00.705Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.705Z",
+          "finishedAt": "2026-03-15T13:40:00.707Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:40:00.707Z"
+    },
+    "ord-stress-2-1773582000724": {
+      "idempotencyKey": "idem-stress-2-1773582000724",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.751Z",
+          "finishedAt": "2026-03-15T13:40:00.754Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.754Z",
+          "finishedAt": "2026-03-15T13:40:00.756Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.756Z",
+          "finishedAt": "2026-03-15T13:40:00.758Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.758Z",
+          "finishedAt": "2026-03-15T13:40:00.761Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:40:00.761Z"
+    },
+    "ord-stress-3-1773582000775": {
+      "idempotencyKey": "idem-stress-3-1773582000775",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.801Z",
+          "finishedAt": "2026-03-15T13:40:00.804Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.804Z",
+          "finishedAt": "2026-03-15T13:40:00.807Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.807Z",
+          "finishedAt": "2026-03-15T13:40:00.809Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.809Z",
+          "finishedAt": "2026-03-15T13:40:00.811Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:40:00.811Z"
+    },
+    "ord-stress-4-1773582000825": {
+      "idempotencyKey": "idem-stress-4-1773582000825",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.852Z",
+          "finishedAt": "2026-03-15T13:40:00.857Z",
+          "durationMs": 5
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.857Z",
+          "finishedAt": "2026-03-15T13:40:00.860Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.860Z",
+          "finishedAt": "2026-03-15T13:40:00.862Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:40:00.862Z",
+          "finishedAt": "2026-03-15T13:40:00.865Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:40:00.865Z"
+    },
+    "ord-trace-1773582165349": {
+      "idempotencyKey": "idem-trace-1773582165349",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.373Z",
+          "finishedAt": "2026-03-15T13:42:45.376Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.376Z",
+          "finishedAt": "2026-03-15T13:42:45.378Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.378Z",
+          "finishedAt": "2026-03-15T13:42:45.381Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.381Z",
+          "finishedAt": "2026-03-15T13:42:45.383Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:45.383Z"
+    },
+    "ord-stress-0-1773582165574": {
+      "idempotencyKey": "idem-stress-0-1773582165574",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.598Z",
+          "finishedAt": "2026-03-15T13:42:45.601Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.601Z",
+          "finishedAt": "2026-03-15T13:42:45.604Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.604Z",
+          "finishedAt": "2026-03-15T13:42:45.606Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.606Z",
+          "finishedAt": "2026-03-15T13:42:45.610Z",
+          "durationMs": 4
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:45.610Z"
+    },
+    "ord-stress-1-1773582165626": {
+      "idempotencyKey": "idem-stress-1-1773582165626",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.658Z",
+          "finishedAt": "2026-03-15T13:42:45.661Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.661Z",
+          "finishedAt": "2026-03-15T13:42:45.664Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.664Z",
+          "finishedAt": "2026-03-15T13:42:45.666Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.666Z",
+          "finishedAt": "2026-03-15T13:42:45.668Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:45.668Z"
+    },
+    "ord-stress-2-1773582165685": {
+      "idempotencyKey": "idem-stress-2-1773582165685",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.716Z",
+          "finishedAt": "2026-03-15T13:42:45.719Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.719Z",
+          "finishedAt": "2026-03-15T13:42:45.722Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.722Z",
+          "finishedAt": "2026-03-15T13:42:45.725Z",
+          "durationMs": 3
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.725Z",
+          "finishedAt": "2026-03-15T13:42:45.727Z",
+          "durationMs": 2
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:45.727Z"
+    },
+    "ord-stress-3-1773582165744": {
+      "idempotencyKey": "idem-stress-3-1773582165744",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.775Z",
+          "finishedAt": "2026-03-15T13:42:45.777Z",
+          "durationMs": 2
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.778Z",
+          "finishedAt": "2026-03-15T13:42:45.780Z",
+          "durationMs": 2
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.780Z",
+          "finishedAt": "2026-03-15T13:42:45.782Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.782Z",
+          "finishedAt": "2026-03-15T13:42:45.785Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:45.785Z"
+    },
+    "ord-stress-4-1773582165801": {
+      "idempotencyKey": "idem-stress-4-1773582165801",
+      "state": "completed",
+      "steps": [
+        {
+          "step": "payment",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.832Z",
+          "finishedAt": "2026-03-15T13:42:45.835Z",
+          "durationMs": 3
+        },
+        {
+          "step": "inventory",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.835Z",
+          "finishedAt": "2026-03-15T13:42:45.838Z",
+          "durationMs": 3
+        },
+        {
+          "step": "shipping",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.838Z",
+          "finishedAt": "2026-03-15T13:42:45.840Z",
+          "durationMs": 2
+        },
+        {
+          "step": "notification",
+          "status": "success",
+          "startedAt": "2026-03-15T13:42:45.840Z",
+          "finishedAt": "2026-03-15T13:42:45.843Z",
+          "durationMs": 3
+        }
+      ],
+      "updatedAt": "2026-03-15T13:42:45.843Z"
     }
   }
 }
